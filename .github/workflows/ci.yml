@@ -19,11 +19,9 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
-    - name: see ls
-      run: ls        
+        dotnet-version: 8.0.x   
     - name: see src
-      run: echo "$HOME/src/"
+      run: echo "$HOME/src/" > $GITHUB_PATH
     - name: Restore dependencies
       run: dotnet restore CoffeeShopOrder.sln
     - name: Build
