@@ -20,11 +20,9 @@ jobs:
       uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 8.0.x
-    - name: access path .sln
-      run: echo "$HOME/src" >> $GITHUB_PATH
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore .\src\
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore .\src\
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal .\src\
