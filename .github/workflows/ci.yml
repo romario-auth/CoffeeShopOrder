@@ -21,8 +21,8 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore .\src\CoffeeShopOrder.sln
+      run: dotnet restore CoffeeShopOrder.sln
     - name: Build
-      run: dotnet build --no-restore .\src\CoffeeShopOrder.sln
+      run: dotnet build --no-restore CoffeeShopOrder.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal .\src\CoffeeShopOrder.sln
+      run: dotnet test --no-build --verbosity normal CoffeeShopOrder.sln
