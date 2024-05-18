@@ -19,14 +19,10 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: 8.0.x
-    - name: Path
-      run: echo $GITHUB_PATH
-    - name: ls 0
-      run: ls   
+        dotnet-version: 8.0.x 
     - name: Restore dependencies
       run: dotnet restore .\\src\\CoffeeShopOrder.sln
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build --no-restore .\\src\\CoffeeShopOrder.sln
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal .\\src\\CoffeeShopOrder.sln
