@@ -23,13 +23,9 @@ jobs:
     - name: Path
       run: echo $GITHUB_PATH
     - name: ls 0
-      run: ls      
-    - name: change path
-      run: cd src/      
-    - name: ls 1
-      run: ls      
+      run: ls   
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore .\src\CoffeeShopOrder.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
