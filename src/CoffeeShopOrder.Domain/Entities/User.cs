@@ -19,6 +19,15 @@ namespace CoffeeShopOrder.Domain.Entities
         {
             List<string> result = new List<string>() { };
 
+            if (Name.Length == 0)
+                result.Add("Name invalid");
+
+            if (LastName.Length == 0)
+                result.Add("Last Name invalid");
+
+            if (Email.Length == 0)
+                result.Add("Email invalid");
+
             return result;
         }
     }
