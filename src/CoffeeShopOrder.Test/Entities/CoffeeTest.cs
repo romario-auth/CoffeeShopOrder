@@ -10,7 +10,7 @@ namespace CoffeeShopOrder.Test.Entities
         public void IsCoffeeValid_ThenResultTrue()
         {
             // Arange
-            Coffee coffee = CoffeeFixtures.New().Default();
+            Coffee coffee = CoffeeFixtures.New().Builder();
 
             // Act
             var coffeeResult = coffee.IsValid();
@@ -25,7 +25,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Arange
             string name = "";
             string message = "Name invalid";
-            Coffee coffee = CoffeeFixtures.New().WithName(name).Default();
+            Coffee coffee = CoffeeFixtures.New().WithName(name).Builder();
 
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
@@ -40,7 +40,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Arange
             double weight = 0;
             string message = "Weight invalid";
-            Coffee coffee = CoffeeFixtures.New().WithWeight(weight).Default();
+            Coffee coffee = CoffeeFixtures.New().WithWeight(weight).Builder();
 
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
@@ -55,7 +55,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Arange
             string description = "";
             string message = "Description invalid";
-            Coffee coffee = CoffeeFixtures.New().WithDescription(description).Default();
+            Coffee coffee = CoffeeFixtures.New().WithDescription(description).Builder();
 
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
@@ -70,7 +70,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Arange
             int calories = 0;
             string message = "Calories invalid";
-            Coffee coffee = CoffeeFixtures.New().WithCalories(calories).Default();
+            Coffee coffee = CoffeeFixtures.New().WithCalories(calories).Builder();
 
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();

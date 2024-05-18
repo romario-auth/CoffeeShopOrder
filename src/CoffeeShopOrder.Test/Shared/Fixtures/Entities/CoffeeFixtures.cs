@@ -11,7 +11,7 @@ namespace CoffeeShopOrder.Test.Shared.Fixtures.Entities
 
         public static CoffeeFixtures New() => new CoffeeFixtures();
 
-        public Coffee Default()
+        public Coffee Builder()
         {
             return new Coffee(_name, _weight, _description, _calories);
         }
