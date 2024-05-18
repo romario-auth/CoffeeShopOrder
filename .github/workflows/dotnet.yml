@@ -25,7 +25,7 @@ jobs:
     - name: ls 0
       run: ls   
     - name: Restore dependencies
-      run: dotnet restore .\src\CoffeeShopOrder.sln
+      run: dotnet restore .\\src\\CoffeeShopOrder.sln
     - name: Build
       run: dotnet build --no-restore
     - name: Test
