@@ -15,7 +15,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var coffeeResult = coffee.IsValid();
 
-            // Asert
+            // Assert
             Assert.True(coffeeResult);
         }
 
@@ -30,7 +30,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, coffeeResult);
         }
 
@@ -45,7 +45,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, coffeeResult);
         }
 
@@ -60,7 +60,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, coffeeResult);
         }
 
@@ -75,7 +75,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var coffeeResult = coffee.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, coffeeResult);
         }
     }

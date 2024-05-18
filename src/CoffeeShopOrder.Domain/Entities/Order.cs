@@ -21,6 +21,9 @@ namespace CoffeeShopOrder.Domain.Entities
         {
             List<string> result = new List<string>() { };
 
+            if(TotalPrice <= 0)
+                result.Add("Total Price invalid");
+
             return result;
         }
     }

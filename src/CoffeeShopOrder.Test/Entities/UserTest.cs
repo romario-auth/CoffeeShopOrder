@@ -15,7 +15,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var userResult = user.IsValid();
 
-            // Asert
+            // Assert
             Assert.True(userResult);
         }
 
@@ -30,12 +30,12 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var userResult = user.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, userResult);
         }
 
         [Fact]
-        public void IsLastNameUserInValid_ThenNameInvalid()
+        public void IsLastNameUserInValid_ThenLastNameInvalid()
         {
             // Arange
             string lastName = "";
@@ -45,12 +45,12 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var userResult = user.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, userResult);
         }
 
         [Fact]
-        public void IsEmailUserInValid_ThenNameInvalid()
+        public void IsEmailUserInValid_ThenEmailInvalid()
         {
             // Arange
             string email = "";
@@ -60,7 +60,7 @@ namespace CoffeeShopOrder.Test.Entities
             // Act
             var userResult = user.Validate().FirstOrDefault();
 
-            // Asert
+            // Assert
             Assert.Equal(message, userResult);
         }
     }
