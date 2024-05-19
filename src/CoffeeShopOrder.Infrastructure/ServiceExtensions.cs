@@ -13,7 +13,7 @@ namespace CoffeeShopOrder.Infrastructure
         public static void ConfigurePersistenceApp(this IServiceCollection services,
                                                     IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("SqlServe");
+            var connectionString = configuration.GetConnectionString("SqlServer");
             services.AddDbContext<AppDbContext>(opt => opt.UseSqlServer(connectionString));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
