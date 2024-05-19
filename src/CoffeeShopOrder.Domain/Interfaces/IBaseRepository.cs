@@ -7,7 +7,7 @@ namespace CoffeeShopOrder.Domain.Interfaces
         void Create(T entity);
         void Update(T entity);
         void Delete(T entity);
-        Task<T> Get(Guid T, CancellationToken cancellation);
-        Task<List<T>> GetAll(CancellationToken cancellation);
+        Task<T> Get(Guid Id, CancellationToken cancellationToken);
+        Task<List<T>> GetAll(CancellationToken cancellationToken);
     }
 }
