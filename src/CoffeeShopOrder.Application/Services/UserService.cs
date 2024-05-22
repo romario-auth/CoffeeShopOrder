@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
-using CoffeeShopOrder.Application.DTO;
 using CoffeeShopOrder.Application.Interfaces;
+using CoffeeShopOrder.Application.Models.Requests;
+using CoffeeShopOrder.Application.Models.Responses;
 using CoffeeShopOrder.Domain.Entities;
 using CoffeeShopOrder.Domain.Interfaces;
 
@@ -19,19 +20,21 @@ namespace CoffeeShopOrder.Application.Services
             _mapper = mapper;
         }
 
-        public async Task<UserDTO> Create(UserDTO userDTO, CancellationToken cancellationToken)
+        public async Task<CreateUserResponse> Create(UserCreateRequest userCreateRequest, CancellationToken cancellationToken)
         {
-            User user = _mapper.Map<User>(userDTO);
+            User user = _mapper.Map<User>(userCreateRequest);
 
             _userRepository.Create(user);
             await _unitOfWork.Commit(cancellationToken);
 
-            return _mapper.Map<UserDTO>(user);
+            return _mapper.Map<CreateUserResponse>(user);
         }
 
-        public Task<UserDTO> Get(Guid id)
+        public async Task<GetUserResponse> Get(Guid id, CancellationToken cancellationToken)
         {
-            throw new NotImplementedException();
+            User user = await _userRepository.Get(id, cancellationToken);
+
+            return _mapper.Map<GetUserResponse>(user);
         }
     }
 }

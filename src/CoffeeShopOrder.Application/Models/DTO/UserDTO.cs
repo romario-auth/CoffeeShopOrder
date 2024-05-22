@@ -1,4 +1,4 @@
-﻿namespace CoffeeShopOrder.Application.DTO
+﻿namespace CoffeeShopOrder.Application.Models.DTO
 {
     public record UserDTO
     {
