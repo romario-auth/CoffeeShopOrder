@@ -10,9 +10,13 @@ namespace CoffeeShopOrder.Application.Mapping
     {
         public MappingProfile()
         {
-            CreateMap<User, UserDTO>().ReverseMap();
-            CreateMap<UserCreateRequest, User>().ReverseMap();
-            CreateMap<CreateUserResponse, User>().ReverseMap();
+            CreateMap<User, UserDTO>()
+                .ForMember(dest => dest.UserId, src => src.MapFrom(item => item.Id));
+            
+            CreateMap<User, UserCreateRequest>().ReverseMap();
+            
+            CreateMap<User, GetUserResponse>()
+                .ForMember(dest => dest.UserId, src => src.MapFrom(item => item.Id));
         }
     }
 }
