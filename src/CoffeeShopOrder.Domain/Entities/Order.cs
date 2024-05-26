@@ -10,6 +10,8 @@ namespace CoffeeShopOrder.Domain.Entities
         public User User { get; private set; }
         public decimal TotalPrice { get; private set; }
 
+        public Order() {}
+
         public Order(Coffee coffee,User user,decimal totalPrice)
         {
             Coffee = coffee;
