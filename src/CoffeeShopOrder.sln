@@ -5,7 +5,13 @@ VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopOrder.Domain", "CoffeeShopOrder.Domain\CoffeeShopOrder.Domain.csproj", "{195AAC17-1A33-414F-A057-D44470B6C3DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.Test", "CoffeeShopOrder.Test\CoffeeShopOrder.Test.csproj", "{DDFF7117-B346-4867-B1E2-7446B29F75E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopOrder.Test", "CoffeeShopOrder.Test\CoffeeShopOrder.Test.csproj", "{DDFF7117-B346-4867-B1E2-7446B29F75E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.API", "CoffeeShopOrder.API\CoffeeShopOrder.API.csproj", "{7F116FC3-AC1F-48A3-88A3-1F61F3200F50}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.Application", "CoffeeShopOrder.Application\CoffeeShopOrder.Application.csproj", "{A74CBC79-ACC3-422C-8D03-98A3928137E1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopOrder.Infrastructure", "CoffeeShopOrder.Infrastructure\CoffeeShopOrder.Infrastructure.csproj", "{64EA4875-B4A6-400E-A645-5132C72CD3DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +27,18 @@ Global
 		{DDFF7117-B346-4867-B1E2-7446B29F75E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DDFF7117-B346-4867-B1E2-7446B29F75E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DDFF7117-B346-4867-B1E2-7446B29F75E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F116FC3-AC1F-48A3-88A3-1F61F3200F50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F116FC3-AC1F-48A3-88A3-1F61F3200F50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F116FC3-AC1F-48A3-88A3-1F61F3200F50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F116FC3-AC1F-48A3-88A3-1F61F3200F50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A74CBC79-ACC3-422C-8D03-98A3928137E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A74CBC79-ACC3-422C-8D03-98A3928137E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A74CBC79-ACC3-422C-8D03-98A3928137E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A74CBC79-ACC3-422C-8D03-98A3928137E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{64EA4875-B4A6-400E-A645-5132C72CD3DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64EA4875-B4A6-400E-A645-5132C72CD3DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64EA4875-B4A6-400E-A645-5132C72CD3DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64EA4875-B4A6-400E-A645-5132C72CD3DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

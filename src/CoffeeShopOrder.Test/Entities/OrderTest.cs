@@ -1,4 +1,5 @@
 ﻿using CoffeeShopOrder.Domain.Entities;
+using CoffeeShopOrder.Domain.Exceptions;
 using CoffeeShopOrder.Test.Shared.Fixtures.Entities;
 using Xunit;
 
@@ -32,6 +33,17 @@ namespace CoffeeShopOrder.Test.Entities
 
             // Assert
             Assert.Equal(message, orderResult);
+        }
+
+        [Fact]
+        public void WhenOrderInValid_ThenReturnOrderExeption()
+        {
+            // Arange
+            decimal totalPrice = -10;
+            Order orderInValid = OrderFixtures.New().WithTotalPrice(totalPrice).Builder();
+
+            // Assert
+            Assert.Throws<OrderException>(() => orderInValid.ValidateEntities());
         }
     }
 }

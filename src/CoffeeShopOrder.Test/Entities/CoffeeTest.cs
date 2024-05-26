@@ -1,5 +1,7 @@
 using CoffeeShopOrder.Domain.Entities;
+using CoffeeShopOrder.Domain.Exceptions;
 using CoffeeShopOrder.Test.Shared.Fixtures.Entities;
+using System.Xml.Linq;
 using Xunit;
 
 namespace CoffeeShopOrder.Test.Entities
@@ -77,6 +79,17 @@ namespace CoffeeShopOrder.Test.Entities
 
             // Assert
             Assert.Equal(message, coffeeResult);
+        }
+
+        [Fact]
+        public void WhenCoffeeInValid_ThenReturnOrderExeption()
+        {
+            // Arange
+            string name = "";
+            Coffee coffeeInValid = CoffeeFixtures.New().WithName(name).Builder();
+
+            // Assert
+            Assert.Throws<OrderException>(() => coffeeInValid.ValidateEntities());
         }
     }
 }

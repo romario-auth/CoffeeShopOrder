@@ -1,4 +1,6 @@
-﻿namespace CoffeeShopOrder.Domain.Common
+﻿using CoffeeShopOrder.Domain.Exceptions;
+
+namespace CoffeeShopOrder.Domain.Common
 {
     public abstract class EntityBase
     {
@@ -12,11 +14,20 @@
             Id = Guid.NewGuid();
             CreatedAt = DateTime.UtcNow;
             UpdatedAt = DateTime.UtcNow;
+
+            ValidateEntities();
         }
 
         public void SetUpdated()
         {
+            ValidateEntities();
             UpdatedAt = DateTime.UtcNow;
+        }
+
+        public void ValidateEntities()
+        {
+            if (!IsValid())
+                throw new OrderException(String.Join(", ", Validate().ToArray()));
         }
     }
 }
