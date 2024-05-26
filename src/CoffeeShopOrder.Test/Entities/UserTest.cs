@@ -1,4 +1,5 @@
 ﻿using CoffeeShopOrder.Domain.Entities;
+using CoffeeShopOrder.Domain.Exceptions;
 using CoffeeShopOrder.Test.Shared.Fixtures.Entities;
 using Xunit;
 
@@ -63,5 +64,17 @@ namespace CoffeeShopOrder.Test.Entities
             // Assert
             Assert.Equal(message, userResult);
         }
+
+        [Fact]
+        public void WhenUserInValid_ThenReturnOrderExeption()
+        {
+            // Arange
+            string email = "";
+            User userInValid = UserFixtures.New().WithEmail(email).Builder();
+
+            // Assert
+            Assert.Throws<OrderException>(() => userInValid.ValidateEntities()) ;
+        }
+
     }
 }

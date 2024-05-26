@@ -1,4 +1,5 @@
 ﻿using CoffeeShopOrder.Domain.Common;
+using CoffeeShopOrder.Domain.Exceptions;
 
 namespace CoffeeShopOrder.Domain.Entities
 {

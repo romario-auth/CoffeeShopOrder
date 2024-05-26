@@ -6,7 +6,8 @@ namespace CoffeeShopOrder.Application.Interfaces
 {
     public interface IUserService
     {
-        Task<UserDTO> Create(UserCreateRequest userCreateRequest, CancellationToken cancellationToken);
         Task<GetUserResponse> Get(Guid id, CancellationToken cancellationToken);
+        Task<UserDTO> Create(UserCreateRequest userCreateRequest, CancellationToken cancellationToken);
+        Task<List<GetUserResponse>> List(CancellationToken cancellationToken);
     }
 }

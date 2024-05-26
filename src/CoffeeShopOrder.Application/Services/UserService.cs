@@ -21,6 +21,13 @@ namespace CoffeeShopOrder.Application.Services
             _mapper = mapper;
         }
 
+        public async Task<GetUserResponse> Get(Guid id, CancellationToken cancellationToken)
+        {
+            User user = await _userRepository.Get(id, cancellationToken);
+
+            return _mapper.Map<GetUserResponse>(user);
+        }
+
         public async Task<UserDTO> Create(UserCreateRequest userCreateRequest, CancellationToken cancellationToken)
         {
             User user = _mapper.Map<User>(userCreateRequest);
@@ -31,11 +38,11 @@ namespace CoffeeShopOrder.Application.Services
             return _mapper.Map<UserDTO>(user);
         }
 
-        public async Task<GetUserResponse> Get(Guid id, CancellationToken cancellationToken)
+        public async Task<List<GetUserResponse>> List(CancellationToken cancellationToken)
         {
-            User user = await _userRepository.Get(id, cancellationToken);
+            List<User> user = await _userRepository.GetAll(cancellationToken);
 
-            return _mapper.Map<GetUserResponse>(user);
+            return _mapper.Map<List<GetUserResponse>>(user);
         }
     }
 }
