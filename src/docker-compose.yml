@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  coffeeshoporder.api:
+    image: ${DOCKER_REGISTRY-}coffeeshoporderapi
+    build:
+      context: .
+      dockerfile: CoffeeShopOrder.API/Dockerfile
+    ports:
+      - "8001:80"
